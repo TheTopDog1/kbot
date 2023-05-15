@@ -15,10 +15,11 @@ test:
 	go test -v
 
 get:
-	go get§
+	go get
 
 clean:
 	rm -rf kbot
+	docker rmi ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
 
 build: format get
 	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -v -o kbot -ldflags "-X="github.com/TheTopDog1/kbot/cmd.appVersion=${VERSION}
