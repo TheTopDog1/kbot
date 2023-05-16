@@ -1,5 +1,5 @@
 APP=https://github.com/TheTopDog1/kbot
-REGISTRY=FooBar
+REGISTRY=gcr.io/my-project
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux
 TARGETARCH=arm64
