@@ -1,4 +1,4 @@
-APP=https://github.com/TheTopDog1/kbot
+APP=$(shell basename 'https://github.com/TheTopDog1/kbot')
 REGISTRY=gcr.io/my-project
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux
