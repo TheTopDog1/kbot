@@ -33,7 +33,7 @@ spec:
           type: ""
         name: dev-mem
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ .Release.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           volumeMounts:
@@ -44,7 +44,7 @@ spec:
           - name: {{ .Values.secret.env }}
             valueFrom:
               secretKeyRef:
-                key: {{ .Values.secret.tokenKey }}
-                name: {{ .Values.secret.tokenName }}
+                key: {{ .Values.secret.key }}
+                name: {{ .Values.secret.name }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
 
