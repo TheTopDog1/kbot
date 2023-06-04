@@ -6,7 +6,7 @@ VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HE
 TARGETOS=linux
 TARGETARCH=arm64
 CGO_ENABLED=0
-USER_ID:=TheTopDog1
+USER_ID:=thetopdog1
 format:
 	gofmt -s -w ./
 
