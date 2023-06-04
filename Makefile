@@ -4,7 +4,7 @@ APP=$(shell basename 'https://github.com/TheTopDog1/kbot')
 REGISTRY=ghcr.io
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux
-TARGETARCH=arm64
+TARGETARCH=amd64
 CGO_ENABLED=0
 USER_ID:=thetopdog1
 format:
