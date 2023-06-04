@@ -1,0 +1,11 @@
+replicaCount: 1
+
+image:
+  repository: TheTopDog1
+  tag: "v1.0.5-8099dc9"
+  os: linux
+  arch: amd64
+secret:
+  name: "kbot"
+  tokenKey: "token"
+  tokenName: "TELE_TOKEN"
