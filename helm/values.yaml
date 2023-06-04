@@ -1,8 +1,7 @@
 replicaCount: 1
-
 image:
   repository: TheTopDog1
-  tag: "v1.0.5-8099dc9"
+  tag: "v1.0.5-579c6bd"
   os: linux
   arch: amd64
 secret:
