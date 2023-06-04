@@ -1,5 +1,6 @@
 APP=$(shell basename 'https://github.com/TheTopDog1/kbot')
-REGISTRY=gcr.io/my-project
+#REGISTRY=gcr.io/my-project
+REGISTRY=mmmacrosss
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux
 TARGETARCH=arm64
