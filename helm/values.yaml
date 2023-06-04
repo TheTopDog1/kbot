@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   registry: ghcr.io
   repository: TheTopDog1/kbot
-  tag: "v1.0.5-e125814"
+  tag: "v1.0.5-c476a51"
   os: linux
   arch: amd64
 secret:
