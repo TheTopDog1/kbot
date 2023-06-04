@@ -1,11 +1,11 @@
 APP=$(shell basename 'https://github.com/TheTopDog1/kbot')
 #REGISTRY=gcr.io/my-project
-REGISTRY=mmmacrosss
+#REGISTRY=mmmacrosss
+REGISTRY=ghcr.io
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux
 TARGETARCH=arm64
 CGO_ENABLED=0
-
 format:
 	gofmt -s -w ./
 
