@@ -6,6 +6,7 @@ VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HE
 TARGETOS=linux
 TARGETARCH=arm64
 CGO_ENABLED=0
+USER_ID:=TheTopDog1
 format:
 	gofmt -s -w ./
 
@@ -20,7 +21,7 @@ get:
 
 clean:
 	rm -rf kbot
-	docker rmi ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
+	docker rmi ${REGISTRY}/${USER_ID}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
 
 build: format get
 	CGO_ENABLED=${CGO_ENABLED} GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -v -o kbot -ldflags "-X="github.com/TheTopDog1/kbot/cmd.appVersion=${VERSION}
@@ -35,8 +36,8 @@ windows: format get
 	CGO_ENABLED=${CGO_ENABLED} GOOS=windows GOARCH=${TARGETARCH} go build -v -o kbot -ldflags "-X="github.com/TheTopDog1/kbot/cmd.appVersion=${VERSION}
 
 image:
-	docker build . -t ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH} --build-arg TARGETOS=${TARGETOS} --build-arg TARGETARCH=${TARGETARCH} --build-arg CGO_ENABLED=${CGO_ENABLED}
+	docker build . -t ${REGISTRY}/${USER_ID}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH} --build-arg TARGETOS=${TARGETOS} --build-arg TARGETARCH=${TARGETARCH} --build-arg CGO_ENABLED=${CGO_ENABLED}
 
 push:
-	docker push ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
-	echo ">> pushed to ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}"
+	docker push ${REGISTRY}/${USER_ID}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
+	echo ">> pushed to ${REGISTRY}/${USER_ID}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}"
