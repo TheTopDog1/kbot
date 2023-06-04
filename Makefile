@@ -39,3 +39,4 @@ image:
 
 push:
 	docker push ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
+	echo ">> pushed to ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}"
